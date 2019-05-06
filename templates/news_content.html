@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+<table id="news_content" style="width:100%">
+    {% if result %}
+    <tr>
+        <th>id</th>
+        <th>author</th>
+        <th>source</th>
+        <th>content</th>
+        <th>feature</th>
+        <th>title</th>
+        <th>url</th>
+    </tr>
+    {% for row in result %}
+    <tr>
+        <td> {{ row.id }}</td>
+        <td> {{ row.author }}</td>
+        <td> {{ row.source }}</td>
+        <td> {{ row.content }}</td>
+        <td> {{ row.feature }}</td>
+        <td> {{ row.title }}</td>
+        <td> {{ row.url }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+</table>
+</body>
+</html>
