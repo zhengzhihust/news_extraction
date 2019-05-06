@@ -9,3 +9,5 @@ CONFIG = {
     'database': "news_chinese",
     'cursorclass': pymysql.cursors.DictCursor
 }
+
+SELECT_SQL = "SELECT * FROM sqlResult_1558435 LIMIT 50"

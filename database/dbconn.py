@@ -2,7 +2,7 @@ import sys
 
 import pymysql
 
-from database.dbsettings import CONFIG
+from database.dbsettings import CONFIG, SELECT_SQL
 
 
 class Database:
@@ -15,7 +15,7 @@ class Database:
         except pymysql.err.OperationalError:
             sys.exit("Invalid Input: Wrong username/database or password found, please try again!")
 
-    def list_employees(self):
-        self.cur.execute("SELECT * FROM sqlResult_1558435 LIMIT 50")
+    def list_data(self):
+        self.cur.execute(SELECT_SQL)
         result = self.cur.fetchall()
         return result

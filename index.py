@@ -9,7 +9,7 @@ app = Flask(__name__)
 def employees():
     def db_query():
         db = Database()
-        emps = db.list_employees()
+        emps = db.list_data()
         return emps
 
     res = db_query()
