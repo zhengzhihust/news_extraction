@@ -2,7 +2,7 @@ import sys
 
 import pymysql
 
-from database.dbsettings import CONFIG, SELECT_SQL
+from database.dbsettings import CONFIG, SELECT_SQL, SELECT_ALL
 
 
 class Database:
@@ -17,5 +17,10 @@ class Database:
 
     def list_data(self):
         self.cur.execute(SELECT_SQL)
+        result = self.cur.fetchall()
+        return result
+
+    def list_all_data(self):
+        self.cur.execute(SELECT_ALL)
         result = self.cur.fetchall()
         return result

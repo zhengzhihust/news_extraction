@@ -13,4 +13,5 @@ def employees():
         return emps
 
     res = db_query()
-    return render_template('news_content.html', result=res, content_type='application/json')
+    test = 'test'
+    return render_template('news_content.html', result=test, content_type='application/json')
