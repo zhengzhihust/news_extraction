@@ -44,7 +44,7 @@ class Onlinetrain():
     def get_data(self):
 
         db = Database()
-        all_data = db.list_all_data()
+        all_data = db.list_data()
 
         if os.path.exists(self.sentences_file):
             os.remove(self.sentences_file)
@@ -57,10 +57,9 @@ class Onlinetrain():
         return len(all_data)
 
     @staticmethod
-    def _write_line(data, file):
+    def _write_line(sentence, file):
         with open(file, 'a+', encoding='utf-8') as f:
-            for n in data:
-                f.write(' '.join(n) + '\n')
+            f.write(' '.join(sentence) + '\n')
 
     @staticmethod
     def _cut(string):
