@@ -7,7 +7,7 @@
 CONFIG = {
     'pretrain': './pretrained/zhwiki_sohu_100d.model',
     'vector_path': './word2vec/word2vec_100d.model',
-    'sentences_file': './sentences.txt',
+    'sentences_file': './data/sentences.txt',
 }
 
 
