@@ -52,8 +52,8 @@ def check_word(parsed_sentence, root_id, speaker_id, word):
     :speaker_id: id for speaker
     :word: check if word belong to root and not belong to speaker
     '''
-    #并列关系：去除掉与“说”并列的成分
-    except_relation = ['并列关系']
+    #状中结构：去除修饰说的成分; 主谓关系：去除说的主语
+    except_relation = ['状中结构','主谓关系']
     if word.ID in [speaker_id, 0]: return False
     if word.HEAD.ID == root_id and word.DEPREL not in except_relation: 
         return True  # 找到
